@@ -5,7 +5,10 @@ const cors = require('cors');
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: "https://cute-selkie-3be4f8.netlify.app", // ton frontend Netlify
+  methods: ["GET", "POST", "PUT", "DELETE"],
+}));
 app.use(express.json());
 
 // Routes - Using MOCK instead of MongoDB for now
